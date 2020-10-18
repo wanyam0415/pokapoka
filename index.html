@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>폭신폭신 커미션</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="poka.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+    
+    html,body{
+        margin:0;
+        padding:0;
+        background: #f5f0f1;
+    }
+    *{font-family: 'Hi Melody', cursive;}
+    .manzyu{
+        width:80%;
+        margin:0 auto;
+        text-align: center;
+        display:block;
+        background:rgba(255,255,255,0.5);
+        padding:0.5% 0;
+        margin-top:2%;
+    }
+    .manzyu .main1{
+        width:90%;
+        margin:0 auto;
+        padding-bottom:0.5%;
+        border-bottom:1px solid#806973;
+    }
+    .manzyu p{
+        font-size:1.3em;
+        padding:10px 0;
+        margin:0;
+    }
+    .manzyu .main1 h1{
+        font-size:1.8em;
+        margin:0; padding:0;
+    }
+    .manzyu .main1 span{
+        width:100%;
+        background:#36242b;
+        color:#fff;
+        font-size:1.3em;
+    }
+    .manzyu .cmsimg{
+        width:100%; 
+        display:flex;
+        justify-content: space-around;
+    }
+    .manzyu .cmsimg .ver1{
+        width:30%;
+        padding-right:5%;
+    }
+    .manzyu .ver1 .ver1_img img{
+        width:100%;
+    }
+    .manzyu .cmsimg .ver2{
+        width:30%;
+    }
+    .manzyu .ver2 .ver2_img img{width:100%;}
+    
+    .bun{
+        width:80%;
+        margin:0 auto;
+        text-align: center;
+        display:block;
+        background:rgba(255,255,255,0.5);
+        padding:2% 0;
+        margin-bottom:2%;
+    }
+    .bun .main2{
+        width:90%;
+        margin:0 auto;
+        padding-bottom:0.5%;
+        border-bottom:1px solid#806973;
+    }
+    .bun .main2 h1{
+        font-size:1.8em;
+        margin:0; padding:0;
+    }
+    .bun .main2 span{
+        width:100%;
+        background:#36242b;
+        color:#fff;
+        font-size:1.3em;
+    }
+    .bun .cmsimg2{
+        width:100%;
+        display:flex;
+        justify-content:space-around;
+        padding-bottom:2%;
+    }
+    .bun p{
+        font-size:1.3em;
+        padding:10px 0;
+        margin:0;
+    }
+    .bun .ver3{
+        width:30%;
+    }
+    .bun .ver3 .ver3_img img{width:100%;}
+    .bun .ver4{
+        width:30%;
+    }
+    .bun .ver4 .ver4_img img{width:100%;}
+    .bun .ver5{
+        width:30%;
+    }
+    .bun .ver5 .ver5_img img{width:100%;}
+    
+    aside{
+        margin:0 auto;
+        position:fixed;
+        right:3.5%; top:10%;
+    }
+    aside div span{
+        background-color:#806973;
+        border:1px solid#806973;
+        border-radius:25px;
+        color:#fff;
+        width:70px;
+        height:20px;
+        margin:10px 10px 0 0;
+        text-align: center;
+        font-size:0.9em;
+        opacity:0;
+    }
+    aside div:hover span{opacity: 1;}
+    aside .notic1 span:before{
+        content:''; 
+        color:#806973;
+        position:absolute;
+        left:54%; bottom:65%;
+
+        width:0; height:0;
+        border:5px solid transparent;
+        border-bottom:15px solid #806973;
+        transform:rotate(90deg);
+    }
+    aside .from1 span:before{
+        content:''; 
+        color:#806973;
+        position:absolute;
+        left:54%; bottom:8%;
+
+        width:0; height:0;
+        border:5px solid transparent;
+        border-bottom:15px solid #806973;
+        transform:rotate(90deg);
+    }
+    aside .notic1{padding-bottom:10%; display: flex; align-items:center; justify-content: center;}
+    aside .from1{display: flex; align-items:center; justify-content: center;}
+    
+    .popup_notic{
+        width:55%;
+        padding:2% 2%;
+        margin: 0;
+        position:absolute;
+        left:20%; top:20%;
+        background:rgba(255,255,255,0.9);
+        
+        white-space: pre-line;
+        text-align: center;
+        font-size:1.2em;
+        
+        display: none;
+    }
+    .popup_notic.active{display:block;}
+    .popup_notic h1{padding:0; margin:0;}
+    .popup_notic em{color:#f00;}
+    
+    .popup_from{
+        width:55%;
+        padding:2% 2%;
+        margin: 0;
+        position:absolute;
+        left:20%; top:20%;
+        background:rgba(255,255,255,0.9);
+        
+        white-space: pre-line;
+        text-align: center;
+        font-size:1.2em;
+        
+        display:none;
+    }
+    .popup_from.active{display:block;}
+    .popup_from h1{padding:0; margin:0;}
+    .popup_from h3{padding:0; margin:0;}
+    .popup_from em{color:#f00;}
+    
+    
+/*=======================*/
+    
+@media All and (max-width:1160px){
+    .manzyu,.bun{width:90%; padding:3% 0;}
+    .manzyu .cmsimg{width:80%; display: block; margin:0 auto;}
+    .manzyu .cmsimg .ver1,.manzyu .cmsimg .ver2{width:100%; text-align: center;}
+    .bun .cmsimg2{width:80%; display: block; margin:0 auto;}
+    .bun .cmsimg2 .ver3,.bun .cmsimg2 .ver4,.bun .cmsimg2 .ver5{width:100%; text-align: center;}
+    
+    aside{top:1%;}
+    aside .notic1 img{padding-bottom:35%;}
+    aside span{
+        position:absolute;
+        padding:0;
+    }
+    aside span:before{content:''; display:none;}
+    aside .notic1 span{right:-40%; top:34%;}
+    aside .from1 span{right:-40%; top:92%;}
+    
+    .popup_notic{width:90%; left:3%;}
+    .popup_from{width:90%; left:3%;}
+}
+</style>
+
+<article class="manzyu">
+  <div class="main1">
+     <h1>폭신만쥬</h1>
+     <span>　1인+1만쥬 타입 / ￦16,000　</span>      
+  </div>   
+   <div class="cmsimg">
+        <div class="ver1">
+           <p>코야타입</p>
+            <div class="ver1_img">
+                <img src="manzyu/2.gif" alt="">
+            </div>
+        </div> 
+       <div class="ver2">
+           <p>찰딱타입</p>
+           <div class="ver2_img">
+               <img src="manzyu/1.gif" alt="">
+           </div>                     
+       </div>
+   </div>
+</article>
+
+<article class="bun">
+   <div class="main2">
+       <h1>폭신호빵</h1>
+       <span>　1인타입 / ￦12,000　</span>
+   </div>    
+    <div class="cmsimg2">
+        <div class="ver3">
+        <p>팥호빵</p>
+        <div class="ver3_img">
+           <img src="bun/1.gif" alt="">
+       </div>
+    </div>
+    <div class="ver4">
+        <p>계란호빵</p>
+        <div class="ver4_img">
+           <img src="bun/2.gif" alt="">
+       </div>
+    </div>
+    <div class="ver5">
+        <p>초코호빵</p>
+        <div class="ver5_img">
+           <img src="bun/3.gif" alt="">
+       </div>
+    </div>
+    </div>
+    
+</article>
+
+<aside>
+   <div class="notic1">
+      <span>공지사항</span>
+      <img src="poka.png" alt="notic">        
+   </div>
+   <div class="from1">
+      <span>신청양식</span>
+      <img src="poka2.png" alt="from">
+   </div>    
+</aside>
+   
+<article class="popup_notic">
+    
+    <h1>공지사항</h1>
+    <b>모든 저작권은 히로(@hirocms)에게 있습니다!</b>
+    작업물의 업로드는 자유롭게 해 주세요(단 타사이트, 프사 etc.사용시 출처 기재 부탁드려요!)
+    
+    무컨펌 커미션으로 기본 500px*500px 300dpi 로 작업됩니다!
+    신청서에 기재되어 있지 않거나 정확한 컬러파레트가 없어 작업하게 될 경우 이 경우의 환불은 일절 불가합니다!
+    ※컬러파레트는 자세히 부탁드려요!
+    (파란색, 빨간색 > 이런 경우 임의로 컬러를 조정해 작업합니다. 이로 인한 문의는 불가합니다.)
+    
+    가공 허용범위: 캡처 후 스티커 꾸미기, 리사이징, 개인굿즈 소장
+    그 외의 경우는 DM으로 문의 부탁드립니다(_ _)!!
+    
+    현생 및 건강 문제로 작업은 최대 2주 소요되며 천천히 작업될 것 같습니다. 
+    빠른 마감을 희망하실 경우는 별도로 이야기해 주세요!(이 경우 추가금 50% 발생합니다.)
+    <em>기한오버시 150%환불 및 그림 완성파일을 드립니다.</em>
+    
+    슬롯은 전부 10슬롯이며 이후 문의를 주시면 전부 예약으로 잡혀 진행됩니다!
+    신청 슬롯의 경우는 디엠으로 <b>[닉네임/OO타입 신청합니다]</b>를 보내주시면 선착순으로 잡아드립니다!
+    
+</article>
+   
+<article class="popup_from">
+    <h1>신청양식</h1>
+    <div class="manzyu_ver">
+        <h3>폭신만쥬ver.</h3>
+        1. 코야타입 / 찰딱타입
+        2. 만쥬 캐릭터(A) + 만쥬 위의 캐릭터(B) 설명
+        3. 기타 문의사항
+        4. 신청자분 닉네임 / 메일 주소
+    </div>
+    <div class="bun_ver">
+        <h3>폭신호빵ver.</h3>
+        1. 팥호빵 / 계란호빵 / 초코호빵
+        2. 캐릭터 설명
+        3. 기타 문의사항
+        4. 신청자분 닉네임 / 메일주소
+    </div>
+</article>
+   
+<script>    
+$(function(){
+    //start
+    var noticBtn = $('.notic1');
+    var fromBtn = $('.from1');
+    var notic = $('.popup_notic');
+    var from = $('.popup_from');
+    
+    function open(){
+        noticBtn.click(function(){
+            notic.toggleClass('active');
+            from.removeClass('active');
+        });
+        fromBtn.click(function(){
+            from.toggleClass('active');
+            notic.removeClass('active');
+        })
+        
+        $(document).mouseup(function (e){
+            var popup = $(".popup_from, .popup_notic");
+            if(popup.has(e.target).length === 0){
+                popup.removeClass('active');
+            }
+        }); 
+    }
+    open();
+    //end
+});    
+    
+</script>
+ 
+</body>
+</html>
