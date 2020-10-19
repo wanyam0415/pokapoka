@@ -285,8 +285,11 @@
     }
     .popupimg5 .bun_ver3 img{width:20%;}
     
-    .popupimg1.on,.popupimg2.on,,popupimg3.on,.popupimg4.on,.popupimg5.on{
-        display:block;}
+    .popupimg1.on{display:block;}
+    .popupimg2.on{display:block;}
+    .popupimg3.on{display:block;}
+    .popupimg4.on{display:block;}
+    .popupimg5.on{display:block;}
     .popupimg1,.popupimg2,.popupimg3,.popupimg4,.popupimg5{display:none;}
     
 /*=======================*/
@@ -510,41 +513,35 @@ $(function(){
         });
         
         
-        
         $('.ver1_img img').click(function(){
+            $('.popupimg1').addClass('on');
             if($('.popupimg1').hasClass('on')){
-                $('.popupimg1').removeClass('on');
-            }else{
-                $('.popupimg1').addClass('on');
-        }
+                $('.popupimg1').click(function(){$('.popupimg1').removeClass('on');});
+            }
         });
         $('.ver2_img img').click(function(){
+            $('.popupimg2').addClass('on');
             if($('.popupimg2').hasClass('on')){
-                $('.popupimg2').removeClass('on');
-            }else{
-                $('.popupimg2').addClass('on');
-        }
+                $('.popupimg2').click(function(){$('.popupimg2').removeClass('on');});
+            }
         });
         $('.ver3_img img').click(function(){
+            $('.popupimg3').addClass('on');
             if($('.popupimg3').hasClass('on')){
-                $('.popupimg3').removeClass('on');
-            }else{
-                $('.popupimg3').addClass('on');
-        }
+                $('.popupimg3').click(function(){$('.popupimg3').removeClass('on');});
+            }
         });
         $('.ver4_img img').click(function(){
+            $('.popupimg4').addClass('on');
             if($('.popupimg4').hasClass('on')){
-                $('.popupimg4').removeClass('on');
-            }else{
-                $('.popupimg4').addClass('on');
-        }
+                $('.popupimg4').click(function(){$('.popupimg4').removeClass('on');});
+            }
         });
         $('.ver5_img img').click(function(){
+            $('.popupimg5').addClass('on');
             if($('.popupimg5').hasClass('on')){
-                $('.popupimg5').removeClass('on');
-            }else{
-                $('.popupimg5').addClass('on');
-        }
+                $('.popupimg5').click(function(){$('.popupimg5').removeClass('on');});
+            }
         });
     }
     open();
