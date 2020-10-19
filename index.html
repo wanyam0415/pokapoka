@@ -195,6 +195,99 @@
     .popup_from h3{padding:0; margin:0;}
     .popup_from em{color:#f00;}
     
+    .popupimg1{
+        width:100%;
+        height:100%;
+        
+        position:absolute;
+        left:0; top:0;
+        
+        background:rgba(0,0,0,0.5);
+    }
+    .popupimg1 .manzyu_ver1{
+        width:80%;
+        margin:0 auto;
+        padding-top:5%;
+        display:flex;
+        justify-content:space-around;
+    }
+    .popupimg1 .manzyu_ver1 img{width:20%;}
+    
+    .popupimg2{
+        width:100%;
+        height:100%;
+        
+        position:absolute;
+        left:0; top:0;
+        
+        background:rgba(0,0,0,0.5);
+    }
+    .popupimg2 .manzyu_ver2{
+        width:80%;
+        margin:0 auto;
+        padding-top:5%;
+        display:flex;
+        justify-content:space-around;
+    }
+    .popupimg2 .manzyu_ver2 img{width:20%;}
+    
+    .popupimg3{
+        width:100%;
+        height:100%;
+        
+        position:absolute;
+        left:0; top:0;
+        
+        background:rgba(0,0,0,0.5);
+    }
+    .popupimg3 .bun_ver1{
+        width:80%;
+        margin:0 auto;
+        padding-top:5%;
+        display:flex;
+        justify-content:space-around;
+    }
+    .popupimg3 .bun_ver1 img{width:20%;}
+    
+    .popupimg4{
+        width:100%;
+        height:100%;
+        
+        position:absolute;
+        left:0; top:0;
+        
+        background:rgba(0,0,0,0.5);
+    }
+    .popupimg4 .bun_ver2{
+        width:80%;
+        margin:0 auto;
+        padding-top:5%;
+        display:flex;
+        justify-content:space-around;
+    }
+    .popupimg4 .bun_ver2 img{width:20%;}
+    
+    .popupimg5{
+        width:100%;
+        height:100%;
+        
+        position:absolute;
+        left:0; top:0;
+        
+        background:rgba(0,0,0,0.5);
+    }
+    .popupimg5 .bun_ver3{
+        width:80%;
+        margin:0 auto;
+        padding-top:5%;
+        display:flex;
+        justify-content:space-around;
+    }
+    .popupimg5 .bun_ver3 img{width:20%;}
+    
+    .popupimg1.on,.popupimg2.on,,popupimg3.on,.popupimg4.on,.popupimg5.on{
+        display:block;}
+    .popupimg1,.popupimg2,.popupimg3,.popupimg4,.popupimg5{display:none;}
     
 /*=======================*/
     
@@ -205,20 +298,90 @@
     .bun .cmsimg2{width:80%; display: block; margin:0 auto;}
     .bun .cmsimg2 .ver3,.bun .cmsimg2 .ver4,.bun .cmsimg2 .ver5{width:100%; text-align: center;}
     
-    aside{top:1%;}
-    aside .notic1 img{padding-bottom:35%;}
+    aside{right:0%; top:0%;}
     aside span{
-        position:absolute;
-        padding:0;
+        display:none;
     }
+    aside div img{width:90%;}
     aside span:before{content:''; display:none;}
-    aside .notic1 span{right:-40%; top:34%;}
-    aside .from1 span{right:-40%; top:92%;}
+    aside .from1{margin-top:-15%;}
     
-    .popup_notic{width:90%; left:3%;}
-    .popup_from{width:90%; left:3%;}
+    .popup_notic{position:fixed; width:90%; left:3%; top:10%;}
+    .popup_from{position:fixed; width:90%; left:3%; top:10%;}
+    
+    .popupimg1{
+        width:100%;
+        height:100%;
+        position:fixed;
+        left:0; top:0;
+    }
+    .popupimg1 .manzyu_ver1{width:90%; margin:0 auto; padding-top:15%; display:block; }
+    .popupimg1 .manzyu_ver1 img{width:30%; margin:0;}
+    .popupimg2{
+        width:100%;
+        height:100%;
+        position:fixed;
+        left:0; top:0;
+    }
+    .popupimg2 .manzyu_ver2{width:90%; margin:0 auto; padding-top:15%; display:block; }
+    .popupimg2 .manzyu_ver2 img{width:30%; margin:0;}
+    .popupimg3{
+        width:100%;
+        height:100%;
+        position:fixed;
+        left:0; top:0;
+    }
+    .popupimg3 .bun_ver1{width:90%; margin:0 auto; padding-top:15%; display:block; }
+    .popupimg3 .bun_ver1 img{width:30%; margin:0;}
+    .popupimg4{
+        width:100%;
+        height:100%;
+        position:fixed;
+        left:0; top:0;
+    }
+    .popupimg4 .bun_ver2{width:90%; margin:0 auto; padding-top:15%; display:block; }
+    .popupimg4 .bun_ver2 img{width:30%; margin:0;}
+    .popupimg5{
+        width:100%;
+        height:100%;
+        position:fixed;
+        left:0; top:0;
+    }
+    .popupimg5 .bun_ver3{width:90%; margin:0 auto; padding-top:15%; display:block; }
+    .popupimg5 .bun_ver3 img{width:30%; margin:0;}
+    
+    
 }
+    
+    
 </style>
+
+<div class="popupimg1">
+    <div class="manzyu_ver1">
+        <img src="manzyu/2-1.gif" alt="">
+    </div>
+</div>
+<div class="popupimg2">
+    <div class="manzyu_ver2">
+        <img src="manzyu/1-1.gif" alt="">
+    </div>
+</div>
+<div class="popupimg3">
+    <div class="bun_ver1">
+        <img src="" alt="">
+    </div>
+</div>
+<div class="popupimg4">
+    <div class="bun_ver2">
+        <img src="" alt="">
+    </div>
+</div>
+<div class="popupimg5">
+    <div class="bun_ver3">
+        <img src="" alt="">
+    </div>
+</div>
+
 
 <article class="manzyu">
   <div class="main1">
@@ -344,7 +507,45 @@ $(function(){
             if(popup.has(e.target).length === 0){
                 popup.removeClass('active');
             }
-        }); 
+        });
+        
+        
+        
+        $('.ver1_img img').click(function(){
+            if($('.popupimg1').hasClass('on')){
+                $('.popupimg1').removeClass('on');
+            }else{
+                $('.popupimg1').addClass('on');
+        }
+        });
+        $('.ver2_img img').click(function(){
+            if($('.popupimg2').hasClass('on')){
+                $('.popupimg2').removeClass('on');
+            }else{
+                $('.popupimg2').addClass('on');
+        }
+        });
+        $('.ver3_img img').click(function(){
+            if($('.popupimg3').hasClass('on')){
+                $('.popupimg3').removeClass('on');
+            }else{
+                $('.popupimg3').addClass('on');
+        }
+        });
+        $('.ver4_img img').click(function(){
+            if($('.popupimg4').hasClass('on')){
+                $('.popupimg4').removeClass('on');
+            }else{
+                $('.popupimg4').addClass('on');
+        }
+        });
+        $('.ver5_img img').click(function(){
+            if($('.popupimg5').hasClass('on')){
+                $('.popupimg5').removeClass('on');
+            }else{
+                $('.popupimg5').addClass('on');
+        }
+        });
     }
     open();
     //end
