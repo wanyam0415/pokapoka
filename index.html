@@ -13,6 +13,8 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
     
+    body{ -webkit-touch-callout:none;}
+    
     html,body{
         margin:0;
         padding:0;
@@ -501,7 +503,17 @@
     </p>
 </article>
    
-<script>    
+<script>   
+    
+$(window.document).on("contextmenu",function(){
+        if(event.target.nodeName == "IMG"){
+            return false;
+        }
+    });
+    $(document).bind("contextmenu",function(){
+        return false;
+    }) 
+   
 $(function(){
     //start
     var noticBtn = $('.notic1');
